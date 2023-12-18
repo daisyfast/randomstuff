@@ -1,0 +1,32 @@
+#include <iostream>
+
+int main() {
+    int num[10];
+    int input;
+    int counter = 1;
+    for (int i = 0; i < 10; i++) {
+        std::cin >> input;
+        num[i] = input;
+        std::cout << num[i] << std::endl;
+    }
+
+
+    while (counter != 0) {
+        counter = 0;
+        int temp;
+        for (int j = 0; j < 9; j++) {
+            if (num[j] > num[j + 1]) {
+                temp = num[j];
+                num[j] = num[j +1];
+                num[j + 1] = temp;
+                counter++;
+            }
+        }
+        for (int n = 0; n < 10; n++) {
+            std::cout << num[n] << ",";
+        }
+        std::cout << std::endl;
+    }
+
+
+}
