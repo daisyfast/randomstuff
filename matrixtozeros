@@ -1,0 +1,33 @@
+#include <iostream>
+
+int main() {
+    int nums[3][3] = {{1, 2, 3}, {1,0,3}, {1,2,3}};
+    int test = 0;
+
+    for (int n = 0; n < 3; n++) {
+        for (int k = 0 ; k < 3; k++) {
+            if (test != 0) {
+                k = k + test;
+            }
+            if (nums[n][k] == 0) {
+                for (int a = 0; a < 3; a++) {
+                    nums[a][k] = 0;
+                }
+                for (int b = 0; b < 3; b++) {
+                    nums[n][b] = 0;
+                }
+                test++;
+                n++;
+                break;
+            }
+        }
+    }
+
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            std::cout << nums[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
